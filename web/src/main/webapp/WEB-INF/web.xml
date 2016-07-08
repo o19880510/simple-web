@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	id="WebApp_ID" version="3.0">
+	<display-name>base</display-name>
+
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>classpath:root-context.xml</param-value>
+	</context-param>
+
+	<filter>
+		<filter-name>CharacterEncodingFilter</filter-name>
+		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>UTF-8</param-value>
+		</init-param>
+		<init-param>
+			<param-name>forceEncoding</param-name>
+			<param-value>true</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>CharacterEncodingFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	
+<!-- 	<filter> -->
+<!-- 		<filter-name>RequestResponseSetFilter</filter-name> -->
+<!-- 		<filter-class>com.lutongnet.base.functions.actionlog.filter.RequestResponseSetFilter</filter-class> -->
+<!-- 	</filter> -->
+<!-- 	<filter-mapping> -->
+<!-- 		<filter-name>RequestResponseSetFilter</filter-name> -->
+<!-- 		<url-pattern>/*</url-pattern> -->
+<!-- 	</filter-mapping> -->
+	
+<!-- 	<filter> -->
+<!-- 		<description>更新时长：用户停留在页面的时长</description> -->
+<!-- 		<filter-name>UserActionLogUpdateStayTimeFilter</filter-name> -->
+<!-- 		<filter-class>com.lutongnet.base.functions.actionlog.filter.UserActionLogUpdateStayTimeFilter</filter-class> -->
+<!-- 		<init-param> -->
+<!-- 			<param-name>loginUriList</param-name> -->
+<!-- 			<param-value> -->
+<!-- 				system/login_index -->
+<!-- 				system/login -->
+<!-- 			</param-value> -->
+<!-- 		</init-param> -->
+<!-- 	</filter> -->
+<!-- 	<filter-mapping> -->
+<!-- 		<filter-name>UserActionLogUpdateStayTimeFilter</filter-name> -->
+<!-- 		<url-pattern>*.do</url-pattern> -->
+<!-- 		<url-pattern>*.jsp</url-pattern> -->
+<!-- 	</filter-mapping> -->
+	
+<!-- 	<filter> -->
+<!-- 		<description>记录用户操作日志</description> -->
+<!-- 		<filter-name>UserActionLogFilter</filter-name> -->
+<!-- 		<filter-class>com.lutongnet.base.functions.actionlog.filter.UserActionLogFilter</filter-class> -->
+<!-- 	</filter> -->
+<!-- 	<filter-mapping> -->
+<!-- 		<filter-name>UserActionLogFilter</filter-name> -->
+<!-- 		<url-pattern>*.do</url-pattern> -->
+<!-- 		<url-pattern>*.jsp</url-pattern> -->
+<!-- 	</filter-mapping> -->
+
+	<filter>
+		<description>记录用户操作日志</description>
+		<filter-name>UserActionLogFilter2.0</filter-name>
+		<filter-class>com.lutongnet.base.functions.actionlog2.filter.UserActionLogFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>UserActionLogFilter2.0</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	
+	<filter>
+		<filter-name>SessionFilter</filter-name>
+		<filter-class>com.lutongnet.system.filter.SessionFilter</filter-class>
+		<init-param>
+			<param-name>skipUriList</param-name>
+			<param-value>
+				system/login_index
+				system/login
+				system/logout
+				system/verifyCode
+			</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>SessionFilter</filter-name>
+		<url-pattern>/system/*</url-pattern>
+	</filter-mapping>
+	
+	<filter>
+		<filter-name>PrivilegeCheckFilter</filter-name>
+		<filter-class>com.lutongnet.system.filter.PrivilegeCheckFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>PrivilegeCheckFilter</filter-name>
+		<url-pattern>/system/*</url-pattern>
+	</filter-mapping>
+	
+	
+	<filter>
+		<filter-name>sitemesh</filter-name>
+		<filter-class>com.opensymphony.sitemesh.webapp.SiteMeshFilter</filter-class>
+	</filter>
+
+	<filter-mapping>
+		<filter-name>sitemesh</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	
+	
+	<filter>
+		<filter-name>OpenEntityManagerInViewFilter</filter-name>
+		<filter-class>org.springframework.orm.jpa.support.OpenEntityManagerInViewFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>OpenEntityManagerInViewFilter</filter-name>
+		<url-pattern>*.do</url-pattern>  
+    </filter-mapping>
+   
+   
+   
+     
+     
+	<servlet>
+		<servlet-name>appServlet</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<init-param>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>classpath:servlet-context.xml</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>appServlet</servlet-name>
+		<url-pattern>*.do</url-pattern>
+	</servlet-mapping>
+
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+	
+	<listener>
+		<listener-class>com.lutongnet.system.listener.SessionLifecycleListener</listener-class>
+	</listener>
+	
+	<listener>
+		<listener-class>com.lutongnet.system.listener.ServletContextParamsInitListener</listener-class>
+	</listener>
+	
+<!-- 	<listener> -->
+<!-- 		<listener-class>com.lutongnet.system.listener.CommanderListener</listener-class> -->
+<!-- 	</listener> -->
+
+	<jsp-config>
+		<taglib>
+			<taglib-uri>/pathTag</taglib-uri>
+			<taglib-location>/WEB-INF/tag/tag.tld</taglib-location>
+		</taglib>
+		<taglib>
+			<taglib-uri>/codetable</taglib-uri>
+			<taglib-location>/WEB-INF/tag/codetable.tld</taglib-location>
+		</taglib>
+		<taglib>
+			<taglib-uri>/permission</taglib-uri>
+			<taglib-location>/WEB-INF/tag/permission.tld</taglib-location>
+		</taglib>
+		<taglib>
+			<taglib-uri>/mdata</taglib-uri>
+			<taglib-location>/WEB-INF/tag/memdata-functions.tld</taglib-location>
+		</taglib>
+		<taglib>
+			<taglib-uri>/path.tld</taglib-uri>
+			<taglib-location>/WEB-INF/tag/path.tld</taglib-location>
+		</taglib>
+	</jsp-config>
+
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+</web-app>

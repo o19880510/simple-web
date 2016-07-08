@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actions xmlns="http://www.lutongnet.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.lutongnet.com user-action-log-2.0.xsd">
+	
+<!-- 	<global-params> -->
+<!-- 		<param name="USER_ID" column="user_id"/> -->
+<!-- 	</global-params> -->
+	
+<!-- 	<action url="/test/actionlog2.0/index.jsp" action-code="XX01S01" desc="测试index.jsp" record-flag="flag"> -->
+<!-- 		<param name="testDate1" column="d_col_1" value="2014-11-11" type="date"/> -->
+<!-- 		<param name="testDate2" column="d_col_2" value="2014-11-11 12:12:12" /> -->
+<!-- 		<param name="testDate3" column="d_col_3" value="12:12:12" type="time"/> -->
+<!-- 		<param name="form.id" /> -->
+<!-- 		<param name="user.id" column="user_id" value="user001"/> -->
+<!-- 	</action> -->
+	
+	<!-- 测试URL -->
+	
+	<action url="/test/actionlog2.0/{name}.jsp" action-code="XXTT02S01" desc="/test/actionlog2.0/${name}.jsp">
+		<param name="name" column="s_col_1" />
+	</action>
+	
+	<action url="/test/actionlog2.0/*.jsp" action-code="XXTT01S01" desc="/test/actionlog2.0/*.jsp"/>
+	<action url="/test/actionlog2.0/**" action-code="XXTT01S02" desc="/test/actionlog2.0/**"/>
+	<action url="/test/**" action-code="XXTT01S03" desc="/test/**"/>
+	
+	<action url="/index.jsp" action-code="XX01S01" desc="测试index.jsp" record-flag="flag01">
+		<param name="flag01" column="s_col_1"/>
+		<param name="test" column="s_col_2"/>
+		<param name="test3" column="s_col_3" value="3Str"/>
+		
+		<param name="test-int" column="i_col_1"/>
+		<param name="test-int2" column="i_col_2"/>
+		<param name="test-int3" column="i_col_3" value="3"/>
+		
+		<param name="testDate1" column="d_col_1" value="2014-11-11" type="date"/>
+		<param name="testDate2" column="d_col_2" value="2014-11-11 12:12:12" />
+		<param name="testDate3" column="d_col_3" value="12:12:12" type="time"/>
+		<param name="form.id" />
+	</action>
+	
+	<action url="/MyJsp.jsp" action-code="XX01S02" desc="测试MyJsp.jsp">
+	</action>
+	
+	<action url="/system/login_index.do" action-code="SL01S01" desc="管理员登录界面">
+	</action>
+	
+	<action url="/system/login.do" action-code="SL02S01" desc="管理员登录">
+		<param name="userid" column="user_id"/>
+	</action>
+	
+	<action url="/system/logout.do" action-code="SL03S01" desc="管理员登出">
+	</action>
+	
+	
+	<action url="/system/menu/list.do" action-code="SM01S01" desc="查看菜单">
+		<param name="keyword" column="s_col_1"/>
+		<param name="current" column="i_col_1"/>
+		<param name="pageSize" column="i_col_2"/>
+	</action>
+	
+	<action url="/system/menu/addTree.do" method="post" action-code="SM01S02" desc="增加菜单树">
+		<param name="name"/>
+		<param name="uri"/>
+		<param name="description"/>
+	</action>
+	
+	<action url="/system/menu/addMenu.do" action-code="SM01S03" desc="增加菜单">
+		<param name="name"/>
+		<param name="uri"/>
+		<param name="description"/>
+	</action>
+	
+	<action url="/system/menu/remove.do" action-code="SM01S04" desc="删除菜单">
+		<param name="id"/>
+	</action>
+	
+	<action url="/system/menu/move.do" action-code="SM01S05" desc="移动菜单">
+		<param name="id"/>
+		<param name="pid"/>
+		<param name="prevId"/>
+		<param name="nextId"/>
+	</action>
+	
+	<action url="/system/menu/get.do" action-code="SM01S06" desc="获取菜单信息">
+		<param name="id"/>
+	</action>
+	
+	<action url="/system/menu/updateMenu.do" action-code="SM01S07" desc="更新菜单信息">
+		<param name="id"/>
+		<param name="name"/>
+		<param name="uri"/>
+		<param name="description"/>
+	</action>
+	
+	<action url="/system/menu/removeTree.do" action-code="SM01S08" desc="移除菜单树">
+		<param name="id"/>
+	</action>
+	
+	
+	<action url="/system/param/list.do" action-code="SP01S01" desc="查询参数">
+		<param name="name"/>
+		<param name="description"/>
+	</action>
+	
+	<action url="/system/param/add.do" method="post" action-code="SP01S02" desc="新增参数">
+		<param name="name"/>
+		<param name="description"/>
+	</action>
+	
+	<action url="/system/param/update.do" method="post" action-code="SP01S03" desc="修改参数">
+		<param name="id"/>
+		<param name="name"/>
+		<param name="description"/>
+	</action>
+	
+	<action url="/system/param/remove.do" method="get" action-code="SP01S04" desc="删除参数">
+		<param name="id"/>
+	</action>
+	
+	
+	<action url="/system/privilege/list.do" action-code="SP02S01" desc="查询权限">
+		<param name="group"/>
+		<param name="name"/>
+	</action>
+	
+	<action url="/system/privilege/add.do"  method="post" action-code="SP02S02" desc="新增权限">
+		<param name="name"/>
+		<param name="group"/>
+		<param name="uri"/>
+	</action>
+	
+	<action url="/system/privilege/remove.do"  method="get" action-code="SP02S03" desc="删除权限">
+		<param name="id"/>
+	</action>
+	
+	<action url="/system/privilege/update.do"  method="post" action-code="SP02S04" desc="修改权限">
+		<param name="id"/>
+		<param name="name"/>
+		<param name="group"/>
+		<param name="uri"/>
+	</action>
+	
+	
+	<action url="/system/role/list.do"  action-code="SR01S01" desc="查询角色">
+		<param name="name"/>
+	</action>
+	
+	<action url="/system/role/add.do" method="post" action-code="SR01S02" desc="新增角色">
+		<param name="name"/>
+		<param name="description"/>
+	</action>
+	
+	<action url="/system/role/update.do" method="post" action-code="SR01S03" desc="修改角色">
+		<param name="id"/>
+		<param name="name"/>
+		<param name="description"/>
+	</action>
+	
+	<action url="/system/role/remove.do" method="get" action-code="SR01S04" desc="删除角色">
+		<param name="id"/>
+	</action>
+	
+	
+	<action url="/system/user/list.do" action-code="SU01S01" desc="查询用户列表">
+		<param name="name"/>
+		<param name="status"/>
+		<param name="userid"/>
+	</action>
+	
+	<action url="/system/user/add.do" method="post" action-code="SU01S02" desc="新增用户">
+		<param name="userid"/>
+		<param name="nickname"/>
+		<param name="city"/>
+		<param name="status"/>
+		<param name="assignedPrivilegeIds"/>
+	</action>
+	
+	<action url="/system/user/update.do" method="post" action-code="SU01S03" desc="修改用户">
+		<param name="id"/>
+		<param name="userid"/>
+		<param name="nickname"/>
+		<param name="city"/>
+		<param name="status"/>
+		<param name="assignedPrivilegeIds"/><!-- tianjp_??? 获取不到 -->
+	</action>
+	
+	<action url="/system/user/remove.do" method="get" action-code="SU01S04" desc="删除用户">
+		<param name="id"/>
+	</action>
+	
+	<action url="/system/user/disable.do" method="get" action-code="SU01S05" desc="禁用用户">
+		<param name="id"/>
+	</action>
+	
+	<action url="/system/user/enable.do" method="get" action-code="SU01S06" desc="启用用户">
+		<param name="id"/>
+	</action>
+	
+	<action url="/system/user/change_password.do" method="post" action-code="SU01S07" desc="修改密码">
+		<param name="id"/>
+	</action>
+	
+	<!-- 缓存数据管理 -->
+	<action url="/system/data/list.do" action-code="CD01S01" desc="缓存数据列表">
+	</action>
+	
+	<action url="/system/data/detail.do" action-code="CD01S02" desc="缓存数据详情">
+		<param name="dataName" column="s_col_1"/>
+	</action>
+	
+	<action url="/system/data/reload.do" action-code="CD01S03" desc="缓存数据重加载">
+		<param name="dataName" column="s_col_1"/>
+	</action>
+	
+	<action url="/system/data/reload_all.do" action-code="CD01S04" desc="缓存数据全部重加载">
+	</action>
+	
+	<!-- 定时任务管理 -->
+	<action url="/system/statistic/job/list.do" action-code="SA01S01" desc="任务列表">
+	</action>
+	
+	<action url="/system/statistic/job/run.do" action-code="SA01S02" desc="任务运行">
+		<param name="jobClass"/>
+	</action>
+	
+	<action url="/system/statistic/job/log/list.do" action-code="SA02S01" desc="任务日志列表">
+	</action>
+	
+	<action url="/system/statistic/job/log/detail.do" action-code="SA02S02" desc="任务日志详情">
+	</action>
+</actions>

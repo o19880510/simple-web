@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<soap:Body xmlns:m="http://webserice.woo.lutong.com/">
+		<m:firstSayMethod>
+			<request>
+				<age />
+			</request>
+		</m:firstSayMethod>
+	</soap:Body>
+</soap:Envelope>

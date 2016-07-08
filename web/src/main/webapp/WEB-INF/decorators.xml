@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<decorators>
+	<excludes>
+        <pattern>/resources/**</pattern>
+        <pattern>/system/login_index.do</pattern>
+        <pattern>/system/login.do</pattern>
+        <pattern>/system/login_force.jsp</pattern>
+        <pattern>/system/info.jsp</pattern>
+        <pattern>/*.jsp**</pattern>
+        <pattern>/tools/**</pattern>
+        <pattern>/test/**</pattern>
+    </excludes>
+	<decorator name="main" page="/system/main.do">
+        <pattern>/**</pattern>
+    </decorator>
+</decorators>

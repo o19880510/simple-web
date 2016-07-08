@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://www.lutongnet.com" xmlns="http://www.lutongnet.com"
+	elementFormDefault="qualified">
+
+	<xs:element name="actions">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="global-params" minOccurs="0" maxOccurs="1" />
+				<xs:element ref="action" maxOccurs="unbounded" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="global-params">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="param" minOccurs="0" maxOccurs="unbounded" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="action">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="param" minOccurs="0" maxOccurs="unbounded" />
+			</xs:sequence>
+
+			<xs:attribute name="url" type="xs:string" use="required">
+				<xs:annotation>
+					<xs:documentation>
+						<![CDATA[
+							url映射灵活<br>
+							url可做如下配置：<br>
+							1. /system/login<br>
+							2. /system/login.do<br>
+							3. /system/*<br>
+							4. /system/*.do<br>
+							5. /system/**<br>
+							6. /system/${var}<br>
+							7. /system/${var}/${var2}<br>
+							8. /system/${varInt:\\d+}<br>
+	    				]]>
+
+					</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="action-code" type="xs:string" use="required">
+				<xs:annotation>
+					<xs:documentation>
+						<![CDATA[
+							Action-Code规则<br>
+							XX01S01，模块 > 功能 > (页面)操作。<br>
+							XX表示模块名；第一个01表示功能，可增加；S01表示功能包含的页面（增删改查等），可增加。<br>
+	    				]]>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="desc" type="xs:string" use="required" />
+			<xs:attribute name="method" default="post" use="optional">
+				<xs:annotation>
+					<xs:documentation>
+						<![CDATA[
+							url相同时，使用method区分请求
+	    				]]>
+					</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="get" />
+						<xs:enumeration value="post" />
+						<xs:enumeration value="head" />
+						<xs:enumeration value="options" />
+						<xs:enumeration value="put" />
+						<xs:enumeration value="delete" />
+						<xs:enumeration value="trace" />
+						<xs:enumeration value="connect" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="record-flag" type="xs:string" use="optional" >
+				<xs:annotation>
+					<xs:documentation>
+						<![CDATA[
+							url相同时，使用method区分请求
+	    				]]>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="param">
+		<xs:complexType>
+			<xs:attribute name="name" type="xs:string" use="required" >
+				<xs:annotation>
+					<xs:documentation>
+						<![CDATA[
+							参数名称
+							<br>
+							<br>
+							参数值寻找规则：<br>
+							A. 从request请求中寻找<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;A.1 对应param标签的value属性<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;A.2 http请求体<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;A.3 http请求QueryString<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;A.4 http请求uri<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;A.5 http请求cookies<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;A.6 http请求head<br>
+								
+								<br>还未找到则会继续在B方案中寻找<br><br>
+								
+							B. 从用户session中寻找<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;B.1 session.attribute值<br>
+	    				]]>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="column" default="s_col_1" use="optional">
+				<xs:annotation>
+					<xs:documentation>
+					<![CDATA[
+						字符串字段(50): s_col_1, s_col_2, s_col_3, s_col_4<br>
+						整型字段(11):i_col_1, i_col_2, i_col_3<br>
+						时间字段:d_col_1, d_col_2, d_col_3<br>
+						特殊字段:user_id(用户ID)<br>
+    				]]>
+					</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="s_col_1" />
+						<xs:enumeration value="s_col_2" />
+						<xs:enumeration value="s_col_3" />
+						<xs:enumeration value="s_col_4" />
+						<xs:enumeration value="i_col_1" />
+						<xs:enumeration value="i_col_2" />
+						<xs:enumeration value="i_col_3" />
+						<xs:enumeration value="d_col_1" />
+						<xs:enumeration value="d_col_2" />
+						<xs:enumeration value="d_col_3" />
+						<xs:enumeration value="user_id" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="value" type="xs:string" use="optional" />
+			<xs:attribute name="type" type="xs:string" default="yyyy-MM-dd HH:mm:ss" use="optional">
+				<xs:annotation>
+					<xs:documentation>
+						<![CDATA[
+							仅在column为时间类型(d_col)时使用<br>
+							定义时间格式：yyyy-MM-dd HH:mm:ss
+	    				]]>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="maxLength" type="xs:integer" default="0" use="optional" />
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

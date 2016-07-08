@@ -1,0 +1,22 @@
+DROP TABLE IF EXISTS `t_ual_base`;
+DROP TABLE IF EXISTS `t_ual_business`;
+DROP TABLE IF EXISTS `t_ual_stay_time`;
+DROP TABLE IF EXISTS `t_action_log`;
+DROP TABLE IF EXISTS `t_action_log_detail`;
+DROP TABLE IF EXISTS `t_menu`;
+DROP TABLE IF EXISTS `t_param`;
+DROP TABLE IF EXISTS `t_param_item`;
+DROP TABLE IF EXISTS `t_privilege`;
+DROP TABLE IF EXISTS `t_role`;
+DROP TABLE IF EXISTS `t_role_privilege`;
+DROP TABLE IF EXISTS `t_seq`;
+DROP TABLE IF EXISTS `t_system_paramter`;
+DROP TABLE IF EXISTS `t_user`;
+DROP TABLE IF EXISTS `t_user_action_log`;
+DROP TABLE IF EXISTS `t_user_role`;
+DROP TABLE IF EXISTS `t_schedule_log`;
+DROP TABLE IF EXISTS `t_schedule_log_new`;
+
+DROP TABLE IF EXISTS `t_data_summary`;
+DROP TABLE IF EXISTS `t_data_summary_date`;
+DROP TABLE IF EXISTS `t_data_summary_indicator`;

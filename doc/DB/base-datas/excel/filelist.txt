@@ -1,0 +1,15 @@
+excel/t_menu.xls 8 2 10
+excel/t_param.xls 4 2 3
+excel/t_param_item.xls 5 2 7
+excel/t_privilege.xls 5 2 24
+excel/t_role.xls 4 2 2
+excel/t_role_privilege.xls 3 2 24
+excel/t_seq.xls 7 2 2
+
+rem 无数据
+rem excel/t_system_paramter.xls 5 
+
+excel/t_user.xls 10 2 2
+excel/t_user_role.xls 3 2 2
+
+

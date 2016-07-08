@@ -1,0 +1,13 @@
+DELETE FROM `t_action_log`;
+DELETE FROM `t_action_log_detail`;
+DELETE FROM `t_menu`;
+DELETE FROM `t_param`;
+DELETE FROM `t_param_item`;
+DELETE FROM `t_privilege`;
+DELETE FROM `t_role`;
+DELETE FROM `t_role_privilege`;
+DELETE FROM `t_seq`;
+DELETE FROM `t_system_paramter`;
+DELETE FROM `t_user`;
+DELETE FROM `t_user_action_log`;
+DELETE FROM `t_user_role`;

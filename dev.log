@@ -1,0 +1,116 @@
+2016-04-08 修复codetable json功能bug：Object类型时只输出对象，不输出伪数组结构。当key是1，2，3等数组时，与伪数组游标冲突。
+
+2016-03-27 修复excel读取公式数据失败问题
+
+2015-12-30 修复codetable json功能bug：当数据为空时，什么都不输出。输出改为{}或[]。
+
+2015-12-23 修复user action log 中实体类属性命名问题，sCol1改为scol1。属性名第一个单词尽量避免使用一个字母：如eBook， eMail。
+
+2015-12-23 修复user action log 中用户Id获取失败bug 
+
+2015-12-16 增加codetable checkbox功能
+			2015-05-08 v1.0.5-SNAPSHOT-2 !!!
+
+2015-11-06 修复main.jsp 菜单处理bug
+
+2015-10-21 1、文件同步bug修复：文件更新时先删除旧文件
+			2、增加命令类启动文件同步服务。以便文件同步服务可单独运行 
+			3、增加valueHelper gettable接口
+
+2015-09-15 增加redis缓存容器 
+
+2015-06-05 增加数据统计表
+			更换json依赖包，使用2.X版本
+
+
+2015-05-08 v1.0.5-SNAPSHOT-1 !!!
+			修复EntityDaoSupport中queryFirst方法bug
+			
+
+2015-05-08 v1.0.4 release !!!
+
+2015-05-08 1、移除fasterxml-json库
+			2、增加joda-DateTime json转换适配类
+
+2015-05-05 修复ftp文件上传bug。需要创建不存在的目录。
+
+2015-04-29 ualId转换为大写
+			修改《开发规范》
+
+2015-04-23 DAOSupport修改：queryFirst，增加limit关键字，以便减少查询时间
+
+2015-04-22 	IOSystem：增加stream关闭调用（close方法）
+			修复dataManagement.load方法bug
+
+2015-04-21 增加分页展示信息：总记录数
+			修改FtpHelper，修复下载文件假死问题
+
+2015-04-10 修复valuehelper中httpservletrequest取值方式。
+			增加数据统计功能。包含界面展示和数据导出。
+			EntityDaoSupport 增强findByPaging分页查询功能。使得不在需要内部查询总数据量
+
+2015-04-09 修复user-action-log2.0重大bug。不相关的请求不会清空cookies。
+			缓存数据管理。修复重新加载数据bug。
+
+2015-03-31 user-action-log2.0 编码完成，测试部分完成
+
+2015-03-16 base项目使用maven构建，不再使用ant工具
+
+2015-03-05 DefaultScheduleJobExecutor 增加事物。否则会发生事物等待时间超时。
+			修复ValueHelper的bug，ValueHelper获取格式异常数据报错
+
+2015-03-04 actionResult.type的值是大写，改为小写
+
+2015-02-25 修改codetable radio功能，增加checkValue属性
+
+2015-02-10 修复文件同步bug。rmi有两个端口服务注册端口和数据端口。这两个端口都需要自定义，否则难以通过防火墙。
+
+2015-02-06 将java mail改为版本1.5
+
+2015-01-28 解决memcache缓存bug
+
+2015-01-27 v1.0.3 release !!!
+
+2015-01-27 增加schedule功能：综合管理定时任务、提供日志以及管理平台
+
+2015-01-26 修复SocketUtils soap功能，修改http请求头。
+			修改邮件发送功能
+
+2015-01-21 整理codetable功能，变更结构和代码，以便重用
+
+2015-01-14 修复httpclient未关闭bug
+
+2015-01-12 修复文件同步bug，并重构。增加SpringUtils类
+
+2015-01-08 增加文件同步功能代码，未完成....
+
+2014-12-31 修复IOSystem.getClasspath方法bug。解决在Windows操作系统下，路径多出一个'/'的问题
+		将EnunLoader接口放入base文件夹下，否则项目无法构建
+		修改权限管理和菜单管理界面，方便操作。相关表不动。未改完
+
+2014-12-20 删除数据库中用户状态、日志等级数据。改用enum数据。使用EnunLoader加载enum数据。使用codetable标签展示数据
+
+2014-12-09  1、修复CodetableJsonTag bug， 默认输出Object类型数据
+			2、增加ValueHelper、MapParser、Parameter工具类
+
+2014-11-20 v1.0.2 release !!!
+
+2014-11-20 将J2EE5 更换为J2EE6。解决@oneToMany中orphanRemoval属性找不到。
+			修改单元测试TestRequest，TestServletContext两个类，适配J2EE6中HttpServletRequest接口
+2014-11-19 修复重大bug。修复codetable获取数据bug：每次必须从DataContainer中获取，CodetableDataManagement不再保留数据
+2014-11-08 EntityDaoSupport类修改。
+			EntityManager	entityManager更改为私有，获取entityManager对象必须通过getEntityManager方法;
+			增加setEntityManager方法，可灵活设置新的entityManager对象;
+			
+2014-11-06 删除VersionControl接口，version_no 由trigger完成
+
+2014-09-19 v1.0.1 release !!!
+
+2014-09-18 修正action-log bug
+			1、增加log value接口
+			2、修改user id获取方式
+			3、修改base包中的EntityDaoSupport
+			
+2014-09-17 增加verson信息，存放于MANIFEST.MF文件中。修改对应的build.xml
+2014-09-17 增加action-log的dao接口，以便使用不同的数据来源
+2014-09-16 v1.0.0 release !!!

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tables>
+	<!-- 
+		所有字段必须大写!
+		
+		name    :表名
+		value   :值字段
+		desc	:描述字段
+		order	:排序字段
+		orderBy :"ASC" "DESC"  增序减序排列
+	 -->
+	<!-- 
+	<table name="RESPONSE_CODE"  table="" value="RESPONSE_CODE" desc="concat(OPERATIONS_STATUS,'-', RESPONSE_MSG) as MSG" order="RESPONSE_CODE" orderBy="ASC"/>
+	
+	<table name="RESPONSE_CODE">
+		<sql>
+			SELECT DISTINCT RESPONSE_CODE, concat(OPERATIONS_STATUS,'-', RESPONSE_MSG) as MSG
+			FROM RESPONSE_CODE
+			ORDER BY RESPONSE_CODE ASC
+		</sql>
+	</table>
+	 -->
+<!-- 	<table name="TEST_ACTION_CODE"  table="T_USER_ACTION_LOG" value="ACTION_CODE" desc="OPERATION_DESC" order="OPERATION_DESC" orderBy="ASC"/> -->
+	
+</tables>
