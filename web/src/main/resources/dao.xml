@@ -52,11 +52,11 @@
 		<property name="persistenceUnitName" value="default"></property>
 		<property name="packagesToScan" >
 			<list>
-				<value>com.lutongnet.system.model.entity</value>
-				<value>com.lutongnet.base.functions.actionlog.model.entity</value>
-				<value>com.lutongnet.base.functions.actionlog2.model.entity</value>
-				<value>com.lutongnet.statistics.entity</value>
-				<value>com.lutongnet.summary.model.entity</value>
+				<value>woo.study.web.common.common.business.system.model.entity</value>
+				<value>woo.study.web.common.common.business.base.functions.actionlog.model.entity</value>
+				<value>woo.study.web.common.common.business.base.functions.actionlog2.model.entity</value>
+				<value>woo.study.web.common.common.business.statistics.entity</value>
+				<value>woo.study.web.common.common.business.summary.model.entity</value>
 			</list>
 		</property>
 		<property name="jpaVendorAdapter">

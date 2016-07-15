@@ -6,7 +6,7 @@
  <uri>/pathTag</uri>
  <tag>
   <name>path</name>
-  <tag-class>com.lutongnet.base.tag.WebContextPathTag</tag-class>
+  <tag-class>woo.study.web.common.common.business.base.tag.WebContextPathTag</tag-class>
   <body-content>scriptless</body-content>
   <attribute>
   	<name>fullPath</name>

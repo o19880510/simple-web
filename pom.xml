@@ -2,8 +2,8 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.lutongnet.base</groupId>
-	<artifactId>lutong-base</artifactId>
+	<groupId>woo.study.web.base</groupId>
+	<artifactId>web-base</artifactId>
 	<packaging>pom</packaging>
 	<version>1.0.0</version>
 
@@ -27,14 +27,6 @@
 		<module>business</module>
 		<module>web</module>
 	</modules>
-	<!-- <repositories> <repository> <id>nexus</id> <url>http://172.16.12.86:10100/nexus/content/groups/public/</url> 
-		<releases> <enabled>true</enabled> </releases> <snapshots> <enabled>false</enabled> 
-		</snapshots> </repository> </repositories> <pluginRepositories> <pluginRepository> 
-		<id>nexus</id> <url>http://172.16.12.86:10100/nexus/content/groups/public/</url> 
-		<releases> <enabled>true</enabled> </releases> <snapshots> <enabled>false</enabled> 
-		</snapshots> </pluginRepository> </pluginRepositories> <distributionManagement> 
-		<repository> <id>lutong-releases</id> <url>http://172.16.12.86:10100/nexus/content/repositories/releases/</url> 
-		</repository> </distributionManagement> -->
 
 	<build>
 		<plugins>
@@ -234,6 +226,8 @@
 			<groupId>de.innosystec</groupId>
 			<artifactId>unrar</artifactId>
 			<version>0.3</version>
+			<scope>system</scope>
+			<systemPath>/home/tianjp/E/workspace/simple-web/lib/de-unrar-0.3.jar</systemPath>
 		</dependency>
 
 

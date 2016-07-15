@@ -12,7 +12,7 @@
 
 	<tag>
 		<name>option</name>
-		<tag-class>com.lutongnet.base.functions.codetable.tag.CodetableOptionTag</tag-class>
+		<tag-class>woo.study.web.common.common.business.base.functions.codetable.tag.CodetableOptionTag</tag-class>
 		<body-content>JSP</body-content>
 		<attribute>
 			<name>table</name>
@@ -42,7 +42,7 @@
 
 	<tag>
 		<name>radio</name>
-		<tag-class>com.lutongnet.base.functions.codetable.tag.CodetableRadioTag</tag-class>
+		<tag-class>woo.study.web.common.common.business.base.functions.codetable.tag.CodetableRadioTag</tag-class>
 		<body-content>JSP</body-content>
 		<attribute>
 			<name>table</name>
@@ -78,7 +78,7 @@
 	
 	<tag>
 		<name>checkbox</name>
-		<tag-class>com.lutongnet.base.functions.codetable.tag.CodetableCheckboxTag</tag-class>
+		<tag-class>woo.study.web.common.common.business.base.functions.codetable.tag.CodetableCheckboxTag</tag-class>
 		<body-content>JSP</body-content>
 		<attribute>
 			<name>table</name>
@@ -120,7 +120,7 @@
 
 	<tag>
 		<name>out</name>
-		<tag-class>com.lutongnet.base.functions.codetable.tag.CodetableOutTag</tag-class>
+		<tag-class>woo.study.web.common.common.business.base.functions.codetable.tag.CodetableOutTag</tag-class>
 		<body-content>JSP</body-content>
 		<attribute>
 			<name>table</name>
@@ -150,7 +150,7 @@
 
 	<tag>
 	    <name>json</name>
-	    <tag-class>com.lutongnet.base.functions.codetable.tag.CodetableJsonTag</tag-class>
+	    <tag-class>woo.study.web.common.common.business.base.functions.codetable.tag.CodetableJsonTag</tag-class>
 	    <body-content>JSP</body-content>
 	    <attribute>
 	        <name>table</name>

@@ -1,4 +1,4 @@
-<%@ page language="java" import="com.lutongnet.base.functions.actionlog2.config.*" pageEncoding="UTF-8"%>
+<%@ page language="java" import="woo.study.web.common.common.business.base.functions.actionlog2.config.*" pageEncoding="UTF-8"%>
 
 
 <%

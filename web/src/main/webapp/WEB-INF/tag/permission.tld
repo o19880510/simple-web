@@ -12,7 +12,7 @@
 
   <tag>
     <name>verify</name>
-    <tag-class>com.lutongnet.system.tag.PermissionTag</tag-class>
+    <tag-class>woo.study.web.common.common.business.system.tag.PermissionTag</tag-class>
     <body-content>JSP</body-content>
     <attribute>
         <name>uri</name>

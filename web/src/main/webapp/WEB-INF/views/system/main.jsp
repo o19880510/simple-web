@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@page import="com.lutongnet.system.constant.AppConstant"%>
-<%@page import="com.lutongnet.system.model.entity.Menu"%>
+<%@page import="woo.study.web.common.common.business.system.constant.AppConstant"%>
+<%@page import="woo.study.web.common.common.business.system.model.entity.Menu"%>
 <%@page import="java.util.List"%>
 <%@page isELIgnored="false"%>
 <%@ include file="../common/common_tags.jsp" %>

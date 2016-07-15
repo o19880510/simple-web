@@ -4,20 +4,20 @@
 	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
-		<groupId>com.lutongnet.base</groupId>
-		<artifactId>lutong-base</artifactId>
+		<groupId>woo.study.web.base</groupId>
+		<artifactId>web-base</artifactId>
 		<version>1.0.0</version>
 	</parent>
 	
-	<groupId>com.lutongnet.base</groupId>
-	<artifactId>lutong-base-web</artifactId>
+	<groupId>woo.study.web.base</groupId>
+	<artifactId>web-web</artifactId>
 	<version>${project.version}</version>
 	<packaging>war</packaging>
 	
 	<dependencies>
 		<dependency>
-			<groupId>com.lutongnet.base</groupId>
-			<artifactId>lutong-base-business</artifactId>
+			<groupId>woo.study.web.base</groupId>
+			<artifactId>web-business</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 	</dependencies>

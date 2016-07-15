@@ -21,3 +21,6 @@
 /web/.project
 /web/.settings/**.*
 /web/target/**/**.*
+/bin/
+
+/WebContent/**/**.*

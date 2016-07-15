@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@page import="com.lutongnet.system.model.entity.Menu"%>
+<%@page import="woo.study.web.common.common.business.system.model.entity.Menu"%>
 <%@ include file="../../common/common_tags.jsp" %>
 <!DOCTYPE html>
 <html lang="en">
