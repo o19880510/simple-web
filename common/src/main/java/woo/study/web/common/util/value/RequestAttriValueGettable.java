@@ -4,11 +4,11 @@ package woo.study.web.common.util.value;
 import javax.servlet.http.HttpServletRequest;
 
 
-public class HttpRequestAttriValueHelper extends CommonHelper{
+public class RequestAttriValueGettable implements ValueGettable{
 
 	private HttpServletRequest request;
 
-	public HttpRequestAttriValueHelper(HttpServletRequest request) {
+	public RequestAttriValueGettable(HttpServletRequest request) {
 		this.request = request;
 	}
 

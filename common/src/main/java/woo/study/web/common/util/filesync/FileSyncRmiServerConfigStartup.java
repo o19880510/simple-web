@@ -6,7 +6,7 @@ import org.slf4j.LoggerFactory;
 
 import woo.study.web.common.util.ConfigHelper;
 import woo.study.web.common.util.value.ValueHelper;
-import woo.study.web.common.util.value.ValueHelperContainer;
+import woo.study.web.common.util.value.ValueHelperFactory;
 
 public class FileSyncRmiServerConfigStartup {
 	private static Logger		log			= LoggerFactory.getLogger(FileSyncRmiServerConfigStartup.class);
@@ -20,7 +20,7 @@ public class FileSyncRmiServerConfigStartup {
 	public static void main(String[] args) {
 		PropertyConfigurator.configure("log4j.properties");
 		
-		ValueHelper valueHelper = new ValueHelperContainer(ConfigHelper.getInstance());
+		ValueHelper valueHelper = ValueHelperFactory.of(ConfigHelper.getInstance());
 		
 		FileSyncRmiServerStartup fileSyncRmiServerStartup = new FileSyncRmiServerStartup();
 		

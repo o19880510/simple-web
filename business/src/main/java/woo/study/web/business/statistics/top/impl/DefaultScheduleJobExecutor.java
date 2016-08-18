@@ -17,7 +17,8 @@ import woo.study.web.business.statistics.top.ScheduleJob;
 import woo.study.web.business.statistics.top.ScheduleJobExecutor;
 import woo.study.web.business.statistics.top.ScheduleJob.Status;
 import woo.study.web.common.util.ExceptionUtils;
-import woo.study.web.common.util.value.EmptyValueHelper;
+import woo.study.web.common.util.value.EmptyGettable;
+import woo.study.web.common.util.value.ValueHelperFactory;
 
 /**
  * 
@@ -71,7 +72,7 @@ public class DefaultScheduleJobExecutor implements ScheduleJobExecutor {
 		scheduleLogStore.setErrorMsg(errorMsg);
 
 		scheduleLogStoreService.save(scheduleLogStore);
-		job.setValueHelper(new EmptyValueHelper());
+		job.setValueHelper(ValueHelperFactory.empty());
 		
 		return Status.SUCCESS == jobStatus;
 	}

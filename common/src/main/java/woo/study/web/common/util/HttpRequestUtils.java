@@ -3,6 +3,7 @@ package woo.study.web.common.util;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.servlet.ServletRequest;
 import javax.servlet.http.HttpServletRequest;
 
 /**
@@ -121,7 +122,7 @@ public class HttpRequestUtils {
 	 * @param request
 	 * @return
 	 */
-	public static Map<String, String> getParameterMap(HttpServletRequest request){
+	public static Map<String, String> getParameterMap(ServletRequest request){
 		
 		Map<String, String[]> map = request.getParameterMap();
 		Map<String, String> requestMap = new HashMap<String, String>();

@@ -9,8 +9,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import woo.study.web.business.statistics.contant.PageContants;
 import woo.study.web.business.statistics.service.ScheduleJobService;
 import woo.study.web.common.message.SuccessActionResult;
-import woo.study.web.common.util.value.HttpRequestParamValueHelper;
+import woo.study.web.common.util.value.RequestParamValueGettable;
 import woo.study.web.common.util.value.ValueHelper;
+import woo.study.web.common.util.value.ValueHelperFactory;
+import woo.study.web.common.util.value.ValueHelperFactory.Type;
 
 @Controller
 @RequestMapping(value = "/system/statistic/job")
@@ -28,7 +30,7 @@ public class JobManagementController {
 	public String jobRun(HttpServletRequest request){
 		
 		String jobClass = request.getParameter("jobClass");
-		ValueHelper valueHelper = new HttpRequestParamValueHelper(request);
+		ValueHelper valueHelper = ValueHelperFactory.of(request, Type.PARAMETER);
 		
 		scheduleJobService.invokeJob(jobClass, valueHelper);
 		

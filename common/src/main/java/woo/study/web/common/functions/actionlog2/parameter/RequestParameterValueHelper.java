@@ -1,8 +1,8 @@
 package woo.study.web.common.functions.actionlog2.parameter;
 
-import woo.study.web.common.util.value.CommonHelper;
+import woo.study.web.common.util.value.ValueGettable;
 
-public class RequestParameterValueHelper extends CommonHelper{
+public class RequestParameterValueHelper implements ValueGettable{
 	private RequestParameter requestParameter;
 
 	public RequestParameterValueHelper(RequestParameter requestParameter) {

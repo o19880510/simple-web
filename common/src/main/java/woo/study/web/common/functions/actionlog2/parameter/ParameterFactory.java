@@ -6,6 +6,7 @@ import javax.servlet.http.HttpServletRequest;
 
 import woo.study.web.common.util.HttpRequestUtils;
 import woo.study.web.common.util.value.ValueHelper;
+import woo.study.web.common.util.value.ValueHelperFactory;
 
 public class ParameterFactory {
 
@@ -48,6 +49,6 @@ public class ParameterFactory {
 	public static ValueHelper getValueHelper(HttpServletRequest request, Map<String, String> configParamValues,
 			Map<String, String> pathParamValues) {
 		RequestParameter parameter = ParameterFactory.getRequestParameter(request, configParamValues, pathParamValues);
-		return new RequestParameterValueHelper(parameter);
+		return ValueHelperFactory.of(new RequestParameterValueHelper(parameter));
 	}
 }

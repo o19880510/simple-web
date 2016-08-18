@@ -8,13 +8,16 @@ public interface ValueHelper {
 
 	public Object get(String key);
 
-	public int getInt(String key);
+	/**
+	 * @param key
+	 * @return 返回Integer对象，而不是返回int。为啥？因为当数据不存在时，
+	 *         返回0，-1都不合适（这些数据可能有业务上的意义）。返回null比较合适。
+	 */
+	public Integer getInt(String key);
 
-	public float getFloat(String key);
+	public Long getLong(String key);
 
-	public long getLong(String key);
-
-	public double getDouble(String key);
+	public Double getDouble(String key);
 
 	public String getString(String key);
 
