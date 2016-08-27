@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@page import="woo.study.web.common.common.business.system.constant.AppConstant"%>
+<%@page import="woo.study.web.system.constant.AppConstant"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>

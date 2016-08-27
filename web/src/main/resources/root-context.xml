@@ -18,7 +18,7 @@
 
 	<context:annotation-config />
 
-	<context:component-scan base-package="woo.study.web.common.common.business">
+	<context:component-scan base-package="woo.study.web">
 		<context:exclude-filter type="annotation"
 			expression="org.springframework.stereotype.Controller" />
 		<!-- <context:exclude-filter type="assignable" expression="woo.study.web.common.common.business.base.functions.actionlog.dao.UserActionLogDaoImpl" 
@@ -45,21 +45,21 @@
 
 	<!-- 数据管理配置 start -->
 
-	<bean id="cityDataLoader" class="woo.study.web.common.common.business.system.datacenter.loader.CityDataLoader">
+	<bean id="cityDataLoader" class="woo.study.web.system.datacenter.loader.CityDataLoader">
 		<property name="dataName" value="CITY_MAP"></property>
 		<property name="fileName" value="/json-array-of-city.json"></property>
 		<property name="dataDesc" value="城市数据"></property>
 	</bean>
 
 	<bean id="provinceDataLoader"
-		class="woo.study.web.common.common.business.system.datacenter.loader.ProvinceDataLoader">
+		class="woo.study.web.system.datacenter.loader.ProvinceDataLoader">
 		<property name="dataName" value="PROVINCE_MAP"></property>
 		<property name="fileName" value="/json-array-of-province.json"></property>
 		<property name="dataDesc" value="省份数据"></property>
 	</bean>
 
 	<bean id="userActionLogDataLoader"
-		class="woo.study.web.common.common.business.base.functions.actionlog2.datacenter.loader.UserActionLogDataLoader">
+		class="woo.study.web.common.functions.actionlog2.datacenter.loader.UserActionLogDataLoader">
 		<property name="dataName" value="USER_ACTION_LOG"></property>
 		<!-- <property name="fileName" value="/user-action-log.xml"></property> -->
 		<property name="fileName" value="/user-action-log02.xml"></property>
@@ -67,21 +67,21 @@
 	</bean>
 
 	<bean id="actionCodeDataLoader"
-		class="woo.study.web.common.common.business.base.functions.actionlog2.datacenter.loader.ActionCodeDataLoader">
+		class="woo.study.web.common.functions.actionlog2.datacenter.loader.ActionCodeDataLoader">
 		<property name="dataName" value="ACTION_CODE"></property>
 		<property name="dependDataName" value="USER_ACTION_LOG"></property>
 		<property name="dataDesc" value="ACTION CODE常量列表"></property>
 	</bean>
 
 	<bean id="userActionLogFullPathLoader"
-		class="woo.study.web.common.common.business.base.functions.actionlog2.datacenter.loader.UserActionLogFullPathLoader">
+		class="woo.study.web.common.functions.actionlog2.datacenter.loader.UserActionLogFullPathLoader">
 		<property name="dataName" value="USER_ACTION_LOG_FULL_PATH"></property>
 		<property name="dependDataName" value="USER_ACTION_LOG"></property>
 		<property name="dataDesc" value="ACTION-CODE: URI为全路径的集合"></property>
 	</bean>
 
 	<bean id="userActionLogMatchLoader"
-		class="woo.study.web.common.common.business.base.functions.actionlog2.datacenter.loader.UserActionLogMatchLoader">
+		class="woo.study.web.common.functions.actionlog2.datacenter.loader.UserActionLogMatchLoader">
 		<property name="dataName" value="USER_ACTION_LOG_MATCH_PATH"></property>
 		<property name="dependDataName" value="USER_ACTION_LOG"></property>
 		<property name="dataDesc" value="ACTION-CODE: URI为模糊路径的集合"></property>
@@ -89,60 +89,60 @@
 
 
 	<bean id="configPropesDataLoader"
-		class="woo.study.web.common.common.business.system.datacenter.loader.ConfigPropesDataLoader">
+		class="woo.study.web.system.datacenter.loader.ConfigPropesDataLoader">
 		<property name="dataName" value="CONFIG_PROPES"></property>
 		<property name="fileName" value="/config.properties"></property>
 		<property name="dataDesc" value="config.properties系统配置文件"></property>
 	</bean>
 
 	<bean id="codetableConfigDataLoader"
-		class="woo.study.web.common.common.business.base.functions.codetable.datacenter.loader.CodetableConfigDataLoader">
+		class="woo.study.web.common.functions.codetable.datacenter.loader.CodetableConfigDataLoader">
 		<property name="dataName" value="CODETABLE_CONFIG"></property>
 		<property name="fileName" value="/codetable-config.xml"></property>
 		<property name="dataDesc" value="数据库常量配置文件"></property>
 	</bean>
 
 	<bean id="codetableDBDataLoader"
-		class="woo.study.web.common.common.business.base.functions.codetable.datacenter.loader.CodetableDBDataLoader">
+		class="woo.study.web.common.functions.codetable.datacenter.loader.CodetableDBDataLoader">
 		<property name="dataName" value="CODETABLE_PARAMTERS_MAP"></property>
 		<property name="dependDataName" value="CODETABLE_CONFIG"></property>
 		<property name="dataDesc" value="数据库常量"></property>
 	</bean>
 
 	<bean id="dynamicParameterDBDataLoader"
-		class="woo.study.web.common.common.business.system.datacenter.loader.DynamicParameterDBDataLoader">
+		class="woo.study.web.system.datacenter.loader.DynamicParameterDBDataLoader">
 		<property name="dataName" value="PARAMETER_MAP"></property>
 		<property name="dataDesc" value="动态参数，从t_param表中读取"></property>
 	</bean>
 
 	<bean id="menuTreeDBDataLoader"
-		class="woo.study.web.common.common.business.system.datacenter.loader.MenuTreeDBDataLoader">
+		class="woo.study.web.system.datacenter.loader.MenuTreeDBDataLoader">
 		<property name="dataName" value="MENU_TREE"></property>
 		<property name="dataDesc" value="菜单信息，从t_menu表中读取"></property>
 	</bean>
 
 	<bean id="privilegeUriDBDataLoader"
-		class="woo.study.web.common.common.business.system.datacenter.loader.PrivilegeUriDBDataLoader">
+		class="woo.study.web.system.datacenter.loader.PrivilegeUriDBDataLoader">
 		<property name="dataName" value="PRIVILEGE_URI_LIST"></property>
 		<property name="dataDesc" value="权限信息，从t_privilege表中读取"></property>
 	</bean>
 
 	<bean id="systemParameterDBDataLoader"
-		class="woo.study.web.common.common.business.system.datacenter.loader.SystemParameterDBDataLoader">
+		class="woo.study.web.system.datacenter.loader.SystemParameterDBDataLoader">
 		<property name="dataName" value="SYSTEM_PARAMTER_MAP"></property>
 		<property name="dataDesc" value="系统运行参数，从t_system_paramter表中读取"></property>
 	</bean>
 
 	<bean id="emunLoader"
-		class="woo.study.web.common.common.business.base.functions.datacenter.loader.EmunLoader">
+		class="woo.study.web.common.functions.datacenter.loader.EmunLoader">
 		<property name="dataName" value="ENUM_PARAMTER_MAP"></property>
 		<property name="dataDesc" value="枚举常量，从枚举类中读取"></property>
 		<property name="emunClass">
 			<list>
-				<value>woo.study.web.common.common.business.system.model.entity.User$Status</value>
-				<value>woo.study.web.common.common.business.base.message.ActionResult$Type</value>
-				<value>woo.study.web.common.common.business.statistics.top.ScheduleJob$Status</value>
-				<value>woo.study.web.common.common.business.summary.model.entity.DataSummaryIndicator$IndicatorType
+				<value>woo.study.web.system.model.entity.User$Status</value>
+				<value>woo.study.web.common.message.ActionResult$Type</value>
+				<value>woo.study.web.business.statistics.top.ScheduleJob$Status</value>
+				<value>woo.study.web.business.summary.model.entity.DataSummaryIndicator$IndicatorType
 				</value>
 			</list>
 		</property>
@@ -152,18 +152,17 @@
 
 	<!-- -->
 	<bean id="javaMemDataContainer"
-		class="woo.study.web.common.common.business.base.functions.datacenter.JavaMemDataContainer" />
-	
+		class="woo.study.web.common.functions.datacenter.JavaMemDataContainer" />
 	
 	<!-- 
-	<bean id="memcacheDataContainer" class="woo.study.web.common.common.business.base.functions.datacenter.MemcacheDataContainer"> 
+	<bean id="memcacheDataContainer" class="woo.study.web.common.functions.datacenter.MemcacheDataContainer"> 
 		<constructor-arg> 
 			<ref bean="memcachedClient" /> 
 		</constructor-arg> 
 	</bean> 
 	-->
 	<!-- 
-	<bean id="jedisDataContainer" class="woo.study.web.common.common.business.base.functions.datacenter.JedisDataContainer"> 
+	<bean id="jedisDataContainer" class="woo.study.web.common.functions.datacenter.JedisDataContainer"> 
 		<constructor-arg> 
 			<ref bean="shardedJedisPool" /> 
 		</constructor-arg> 
@@ -171,7 +170,7 @@
 	 -->
 	
 	<bean id="dataLoadManagement"
-		class="woo.study.web.common.common.business.base.functions.datacenter.DataLoadManagement"
+		class="woo.study.web.common.functions.datacenter.DataLoadManagement"
 		init-method="loadAll">
 		<property name="dataLoaderList">
 			<list>
@@ -196,7 +195,7 @@
 	</bean>
 
 	<bean
-		class="woo.study.web.common.common.business.base.functions.codetable.datacenter.CodetableDataManagement">
+		class="woo.study.web.common.functions.codetable.datacenter.CodetableDataManagement">
 		<!-- typedMapLoader 是指 DataLoader返回数据格式为 Map<String, Map<String, Object>> -->
 		<property name="typedMapLoader">
 			<list>
@@ -272,13 +271,13 @@
 	<!-- 数据管理配置 END -->
 
 	<!-- 邮件服务配置 START 
-	<bean id="emailSendServer" class="woo.study.web.common.common.business.base.util.email.EmailSendServer">
+	<bean id="emailSendServer" class="woo.study.web.common.util.email.EmailSendServer">
 		<property name="host" value="smtp.126.com"></property>
 		<property name="sender" value="newtjp@126.com"></property>
 		<property name="senderPwd" value="******"></property>
 		<property name="receiver">
 			<list>
-				<bean class="woo.study.web.common.common.business.base.util.email.EmailReceiver">
+				<bean class="woo.study.web.common.util.email.EmailReceiver">
 					<property name="receiver" value="tianjinpeng@126.com"></property>
 					<property name="type" value="TO"></property>
 				</bean>
@@ -289,7 +288,7 @@
 	<!-- 邮件服务配置 END -->
 
 	<!-- 文件同步服务配置 START 
-	<bean class="woo.study.web.common.common.business.base.util.filesync.FileSyncRmiServerStartup"
+	<bean class="woo.study.web.common.util.filesync.FileSyncRmiServerStartup"
 		init-method="startup">
 		<property name="port" value="${file.sync.local.server.port}" />
 		<property name="dataPort" value="${file.sync.local.server.port.data}" />
@@ -302,29 +301,29 @@
 
 
 	<!-- 定时任务配置 START -->
-	<bean id="scheduleJobFactory" class="woo.study.web.common.common.business.statistics.top.ScheduleJobFactory"
+	<bean id="scheduleJobFactory" class="woo.study.web.business.statistics.top.ScheduleJobFactory"
 		init-method="schedule">
 		<property name="scheduleGroupList">
 			<list>
-				<bean class="woo.study.web.common.common.business.statistics.top.ScheduleJobGroup">
+				<bean class="woo.study.web.business.statistics.top.ScheduleJobGroup">
 					<!-- cron 时间表达式，定义此组任务执行时间 -->
 					<property name="cron" value="0 0 * * * ?" />
 					<property name="jobs">
 						<list>
-							<bean class="woo.study.web.common.common.business.statistics.job.ScheduleJobDemo">
+							<bean class="woo.study.web.business.statistics.job.ScheduleJobDemo">
 								<property name="desc" value="描述此任务功能，在管理界面上展示" />
 							</bean>
-							<bean class="woo.study.web.common.common.business.summary.job.TotalUserOrderDailyJob">
+							<bean class="woo.study.web.business.summary.job.TotalUserOrderDailyJob">
 								<property name="desc" value="这是一个测试任务类" />
 							</bean>
 						</list>
 					</property>
 				</bean>
-				<bean class="woo.study.web.common.common.business.statistics.top.ScheduleJobGroup">
+				<bean class="woo.study.web.business.statistics.top.ScheduleJobGroup">
 					<property name="cron" value="10 0 * * * ?" />
 					<property name="jobs">
 						<list>
-							<bean class="woo.study.web.common.common.business.statistics.job.ScheduleJobDemo">
+							<bean class="woo.study.web.business.statistics.job.ScheduleJobDemo">
 								<property name="desc" value="这是一个测试任务类" />
 							</bean>
 						</list>

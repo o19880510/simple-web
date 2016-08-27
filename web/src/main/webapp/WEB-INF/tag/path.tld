@@ -12,7 +12,7 @@
 	
   <tag>
     <name>project</name>
-    <tag-class>woo.study.web.common.common.business.system.tag.PathTag</tag-class>
+    <tag-class>woo.study.web.system.tag.PathTag</tag-class>
     <body-content>JSP</body-content>
 	<attribute>
         <name>path</name>

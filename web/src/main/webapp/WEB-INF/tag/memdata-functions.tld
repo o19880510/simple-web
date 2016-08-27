@@ -14,7 +14,7 @@
      <description>
      </description>
      <name>get</name>
-     <function-class>woo.study.web.common.common.business.base.functions.datacenter.tag.MemDataFunc</function-class>
+     <function-class>woo.study.web.common.functions.datacenter.tag.MemDataFunc</function-class>
      <function-signature>Object get(java.lang.String)</function-signature>
      <example>
        &lt;c:if test="${mdata:get(data)}">

@@ -14,7 +14,7 @@ public class CookiesValueGettable implements ValueGettable{
 
 	public CookiesValueGettable(HttpServletRequest request) {
 		
-		paramMap = new HashMap<>();
+		paramMap = new HashMap<String, String>();
 		Cookie[] cookies = request.getCookies();
 		for(Cookie cookie : cookies){
 			paramMap.put(cookie.getName(), cookie.getValue());

@@ -13,7 +13,7 @@
 	http://www.springframework.org/schema/aop
     http://www.springframework.org/schema/aop/spring-aop-3.1.xsd">
 	
-	<context:component-scan base-package="woo.study.web.common.common.business">
+	<context:component-scan base-package="woo.study.web">
 		<context:include-filter type = "annotation" expression = "org.springframework.stereotype.Controller" />
 		<context:exclude-filter type = "annotation" expression = "org.springframework.stereotype.Service" />
 		<!-- 	<context:exclude-filter type="assignable" expression="woo.study.web.common.common.business.base.functions.actionlog.dao.UserActionLogDaoImpl" /> -->
@@ -23,7 +23,7 @@
 		<mvc:message-converters register-defaults="true">
 			<bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
 				<property name="objectMapper">
-					<bean class="woo.study.web.common.common.business.base.enhance.json.BaseObjectMapper" />
+					<bean class="woo.study.web.common.enhance.json.BaseObjectMapper" />
 				</property>
 			</bean>
 		</mvc:message-converters>
@@ -40,13 +40,13 @@
 			<property name="paramName" value="lang"></property>
 		</bean>
 		<!-- 
-		<bean class="woo.study.web.common.common.business.system.interceptor.NewLogAnnotationHandlerInterceptor"></bean>
+		<bean class="woo.study.web.system.interceptor.NewLogAnnotationHandlerInterceptor"></bean>
 		 -->
-		<bean class="woo.study.web.common.common.business.system.interceptor.MarkRequestAnnotationHandlerInterceptor"></bean>
-		<bean class="woo.study.web.common.common.business.system.interceptor.LogAnnotationHandlerInterceptor"></bean>
+		<bean class="woo.study.web.system.interceptor.MarkRequestAnnotationHandlerInterceptor"></bean>
+		<bean class="woo.study.web.system.interceptor.LogAnnotationHandlerInterceptor"></bean>
 	</mvc:interceptors>
 
-	<bean class="woo.study.web.common.common.business.system.resolver.CustomizeExceptionResolver">
+	<bean class="woo.study.web.system.resolver.CustomizeExceptionResolver">
 		<property name="defaultErrorView" value="500"></property>
 	</bean>
 

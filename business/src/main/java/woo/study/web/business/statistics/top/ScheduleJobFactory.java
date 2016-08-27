@@ -23,6 +23,7 @@ import org.slf4j.LoggerFactory;
 
 import woo.study.web.common.util.value.EmptyGettable;
 import woo.study.web.common.util.value.ValueHelper;
+import woo.study.web.common.util.value.ValueHelperFactory;
 
 /**
  * 任务工厂类
@@ -69,7 +70,7 @@ public class ScheduleJobFactory {
 
 				JobDataMap jobDataMap = new JobDataMap();
 				jobDataMap.put(SCHEDULE_JOBS, jobGroup.getJobs());
-				jobDataMap.put(SCHEDULE_JOBS_DATAS, new EmptyGettable());
+				jobDataMap.put(SCHEDULE_JOBS_DATAS, ValueHelperFactory.empty());
 				jobDataMap.put(SCHEDULE_JOB_EXECUTOR, scheduleJobExecutor);
 
 				JobDetail jobDetail = JobBuilder.newJob().ofType(TempJob.class).setJobData(jobDataMap).build();

@@ -40,7 +40,9 @@ public class UalBusinessService {
 		ualBusiness.setId(ualLogId);
 		ualBusiness.setUserId(userId);
 		ualBusiness.setActionCode(logConfigValue.getActionCode());
-		ualBusiness.setBusinessStatusCode(businessCode.toString());
+		if(businessCode != null){
+			ualBusiness.setBusinessStatusCode(businessCode.toString());
+		}
 		ualBusiness.setExceptionInfo(ExceptionUtils.getErrorMsg(exception, 6000));
 		ualBusiness.setTxnDate(DateTime.now());
 		
