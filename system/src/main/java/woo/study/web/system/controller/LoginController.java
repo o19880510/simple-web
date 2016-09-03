@@ -34,7 +34,6 @@ public class LoginController {
 
 	@RequestMapping ( value = "/login_index" , method = RequestMethod.GET )
 	public String loginForm ( Model model ) {
-		log.info(ExceptionUtils.MethodInvokeList());
 		
 		model.addAttribute ( "login" , new LoginReq ( ) );
 
