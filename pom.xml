@@ -29,6 +29,7 @@
 	</modules>
 
 	<build>
+	   <finalName>ROOT</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -222,13 +223,13 @@
 			<version>1.6.5</version>
 		</dependency>
 
-		<dependency>
-			<groupId>de.innosystec</groupId>
-			<artifactId>unrar</artifactId>
-			<version>0.3</version>
-			<scope>system</scope>
-			<systemPath>D:/workspace/workspaec_j2ee/simple-web/lib/de-unrar-0.3.jar</systemPath>
-		</dependency>
+<!-- 		<dependency> -->
+<!-- 			<groupId>de.innosystec</groupId> -->
+<!-- 			<artifactId>unrar</artifactId> -->
+<!-- 			<version>0.3</version> -->
+<!-- 			<scope>system</scope> -->
+<!-- 			<systemPath>D:/workspace/workspaec_j2ee/simple-web/lib/de-unrar-0.3.jar</systemPath> -->
+<!-- 		</dependency> -->
 
 
 		<!-- quartz scheduler -->
